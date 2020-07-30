@@ -112,7 +112,7 @@ process SplitIntervals {
 process HaplotypeCaller {
 
 	cpus 4 // --native-pair-hmm-threads GATK HC argument is set to 4 by default
-	memory '64 GB'
+	memory params.h_mem + ' GB'
 	time '12h'
 
 	tag { bamID+"-"+file(Interval) }
